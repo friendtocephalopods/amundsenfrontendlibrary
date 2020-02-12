@@ -77,7 +77,7 @@ def request_wrapper(method: str, url: str, client, headers, timeout_sec: int, da
     :return:
     """
     # If no timeout specified, use the one from the configurations.
-    timeout_sec = timeout_sec or app.config['REQUEST_SESSION_TIMEOUT_SEC']
+    timeout_sec = timeout_sec or 10
 
     if client is not None:
         if method == 'DELETE':

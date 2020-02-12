@@ -63,6 +63,6 @@ marshmallow==2.15.3
 # Upstream url: https://pypi.org/project/responses/
 responses==0.9.0
 
-amundsen-common==0.1.6
+amundsen-common==0.1.7
 marshmallow==2.15.3
 marshmallow-annotations==2.4.0

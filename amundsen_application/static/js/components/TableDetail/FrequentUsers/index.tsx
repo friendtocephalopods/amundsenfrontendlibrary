@@ -13,21 +13,21 @@ export interface FrequentUsersProps {
 
 export function renderReader(reader: TableReader, index: number, readers: TableReader[]) {
   const user = reader.user;
-  let link = user.profile_url;
+  let link = user.email;
   let target = '_blank';
   if (AppConfig.indexUsers.enabled) {
-    link = `/user/${user.user_id}?source=frequent_users`;
+    link = `/user/${user.email}?source=frequent_users`;
     target = '';
   }
 
   return (
     <OverlayTrigger
-      key={ user.display_name }
+      key={ user.email }
       trigger={['hover', 'focus']}
       placement="top"
       overlay={
         <Popover id="popover-trigger-hover-focus">
-          {user.display_name}
+          {user.email}
         </Popover>
       }
     >
@@ -39,7 +39,7 @@ export function renderReader(reader: TableReader, index: number, readers: TableR
         target={ target }
       >
         <Avatar
-          name={ user.display_name }
+          name={ user.email }
           round={ true }
           size={ 25 }
           style={{ zIndex: readers.length - index, position: 'relative' }}
